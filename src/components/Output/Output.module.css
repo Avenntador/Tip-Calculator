@@ -1,0 +1,7 @@
+
+.outputContainer {
+    width: 41.3rem;
+    height: 41.7rem;
+    background-color: var(--color-secondary-very-dark);
+    border-radius: 1.5rem;
+}

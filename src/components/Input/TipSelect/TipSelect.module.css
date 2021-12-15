@@ -1,0 +1,16 @@
+
+.header {
+    font-weight: 700;
+    color: var(--color-secondary-dark-2);
+    margin-bottom:  .6rem;
+}
+
+.tipsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tipsContainer > div {
+    margin-left: .6rem;
+    margin-top: .6rem;
+}
