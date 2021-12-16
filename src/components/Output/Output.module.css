@@ -4,4 +4,8 @@
     height: 41.7rem;
     background-color: var(--color-secondary-very-dark);
     border-radius: 1.5rem;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    
 }

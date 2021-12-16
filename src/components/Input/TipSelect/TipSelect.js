@@ -1,5 +1,6 @@
 import style from './TipSelect.module.css'
 import Tip from './Tip/Tip';
+import CustomInput from '../CustomInput/CustomInput';
 
 const tips = [5, 10, 15, 25, 50];
 
@@ -14,6 +15,7 @@ function TipSelect() {
                         <Tip amount={tip}/>
                     )
                 })}
+                <CustomInput />
             </div>
         </div>
         

@@ -8,9 +8,13 @@
 .tipsContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    
+    
 }
 
 .tipsContainer > div {
-    margin-left: .6rem;
-    margin-top: .6rem;
+     /* margin-left: 0.4rem; */
+     margin-top: 1.6rem; 
 }
+
