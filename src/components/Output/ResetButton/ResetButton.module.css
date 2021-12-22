@@ -16,6 +16,9 @@
 
     font-size: 2rem;
     font-weight: 700;
+}
 
-    
+.resetBtn:hover {
+    color: #00474B;
+    background-color: #9FE8DF;
 }

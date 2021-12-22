@@ -3,11 +3,11 @@ import Amount from './Amount/Amount';
 import Total from './Total/Total';
 import ResetButton from './ResetButton/ResetButton';
 
-function Output() {
+function Output(props) {
     return(
         <div className={style.outputContainer}>
-            <Amount />
-            <Total />
+            <Amount tipPerPerson={props.tipPerPerson} />
+            <Total totalBillPerPerson={props.totalBillPerPerson}/>
             <ResetButton />
         </div>
     )

@@ -1,11 +1,16 @@
 import style from './PeopleInput.module.css'
 
 
-function PeopleInput() {
+function PeopleInput(props) {
+
+    function getValue(e) {
+        props.onPeopleNumChange(e.target.value);
+    }
+
     return(
         <div>
             <p className={style.header}>Number of People</p>
-            <input className={style.peopleInput} type="text" />
+            <input onChange={getValue} type="number" className={style.peopleInput} />
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import style from './Amount.module.css'
 
 
-function Amount() {
+function Amount(props) {
     return(
         <div className={style.amount}>
             <div>
@@ -9,7 +9,7 @@ function Amount() {
                 <p className={style.desc}>/ person</p>
             </div>
             <div className={style.output}>
-                $0.00
+                {`$${props.tipPerPerson.toFixed(2)}`}
             </div>
         </div>
     )

@@ -5,14 +5,18 @@ import CustomInput from '../CustomInput/CustomInput';
 const tips = [5, 10, 15, 25, 50];
 
 
-function TipSelect() {
+function TipSelect(props) {
     return(
         <div>
             <p className={style.header}>Select Tip %</p>
             <div className={style.tipsContainer}>
-                {tips.map(tip => {
+                {tips.map((tip,i) => {
                     return(
-                        <Tip amount={tip}/>
+                        <Tip 
+                        onTipChange={props.onTipChange} 
+                        key={i} 
+                        amount={tip}
+                        />
                     )
                 })}
                 <CustomInput />

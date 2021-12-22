@@ -1,10 +1,15 @@
 import style from './Bill.module.css'
 
-function Bill() {
+function Bill(props) {
+
+    function getValue(e) {
+        props.onBillChange(e.target.value);
+    }
+
     return(
         <div>
             <p className={style.header}>Bill</p>
-            <input className={style.billInput} type="text" />
+            <input onChange={getValue} type="number" className={style.billInput} />
         </div>
     )
 }
