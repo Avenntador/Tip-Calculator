@@ -1,10 +1,11 @@
 import style from './CustomInput.module.css'
 
 
-function CustomInput() {
+function CustomInput({ onChangeState }) {
+
     return(
         <div>
-            <input className={style.customInput} type="text" defaultValue="Custom"/>
+            <input onChange={(e) => {onChangeState('Custom', e.target.value)}} className={style.customInput} type="number" placeholder="Custom"/>
         </div>
     )
 }

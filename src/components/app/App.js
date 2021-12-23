@@ -11,7 +11,6 @@ function App() {
     const [peopleNum, setPeopleNum] = useState(0);
     const [tip, setTip] = useState(0);
    
-
     let tipPerPerson = 0
     let totalBillPerPerson = 0;
 
@@ -20,40 +19,44 @@ function App() {
         totalBillPerPerson = (bill / peopleNum) + tipPerPerson;
     }
     
-
-
-
-    function onBillChange(val) {
-        setBill(val);
-    };
-
-    function onPeopleNumChange(val)  {
-        setPeopleNum(val);
-    };
-
-    function onTipChange(val) {
-        setTip(val);
-    };
-
-    
+    function onChangeState(action, value = '') {
+        switch(action) {
+            case 'Bill': 
+                setBill(value);
+                break;
+            
+            case 'People': 
+                setPeopleNum(value);
+                break;
+            
+            case 'Tip': 
+                setTip(value);
+                break;
+            
+            case 'Custom': 
+                setTip(value);
+                break;
+            
+            case 'Reset': 
+                setBill(0);
+                setTip(0);
+                setPeopleNum(0);
+                break;
+        }
+    }
 
     return(
         <>
             <img className={style.logo} src={logo} alt="App Logo" />
             <div className={style.container}>
-                <Input 
-                onBillChange={onBillChange}
-                onPeopleNumChange={onPeopleNumChange}
-                onTipChange={onTipChange}
-                
-                />
+                <Input onChangeState={onChangeState}/>
                 <Output 
-                tipPerPerson={tipPerPerson}
-                totalBillPerPerson={totalBillPerPerson}
+                    tipPerPerson={tipPerPerson}
+                    totalBillPerPerson={totalBillPerPerson}
+                    onChangeState={onChangeState}
                 />
             </div>
         </>
-        
     );
 }
 

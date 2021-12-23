@@ -1,7 +1,7 @@
 import style from './Total.module.css'
 
 
-function Total(props) {
+function Total({ totalBillPerPerson }) {
     return(
         <div className={style.total}>
             <div>
@@ -9,7 +9,7 @@ function Total(props) {
                 <p className={style.desc}>/ person</p>
             </div>
             <div className={style.output}>
-                {`$${props.totalBillPerPerson.toFixed(2)}`}
+                {`$${totalBillPerPerson.toFixed(2)}`}
             </div>
         </div>
     )

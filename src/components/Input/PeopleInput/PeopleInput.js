@@ -1,16 +1,23 @@
-import style from './PeopleInput.module.css'
+import './PeopleInput.css'
+import { useState } from 'react'
 
+function PeopleInput({ onChangeState }) {
 
-function PeopleInput(props) {
+    const [vis, setVis] = useState('hide');
 
-    function getValue(e) {
-        props.onPeopleNumChange(e.target.value);
+    function validateInput(value) {
+        if (value > 0) {
+            setVis('hide');
+            onChangeState('People', value);
+        } else {
+            setVis('');
+        }
     }
 
     return(
         <div>
-            <p className={style.header}>Number of People</p>
-            <input onChange={getValue} type="number" className={style.peopleInput} />
+            <p className='header'>Number of People <span className={`error ${vis}`}>Can't be zero!</span></p>
+            <input onChange={(e) => {validateInput(e.target.value)} } type="number" className="peopleInput" />
         </div>
     )
 }

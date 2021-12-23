@@ -3,12 +3,12 @@ import Bill from './Bill/Bill';
 import TipSelect from './TipSelect/TipSelect';
 import PeopleInput from './PeopleInput/PeopleInput';
 
-function Input(props) {
+function Input( { onChangeState }) {
     return(
         <div className={style.inputContainer}>
-            <Bill onBillChange={props.onBillChange}/>
-            <TipSelect onTipChange={props.onTipChange}/>
-            <PeopleInput onPeopleNumChange={props.onPeopleNumChange}/>
+            <Bill onChangeState={onChangeState}/>
+            <TipSelect onChangeState={onChangeState}/>
+            <PeopleInput onChangeState={onChangeState}/>
         </div>
     )
 }

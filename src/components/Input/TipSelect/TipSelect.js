@@ -4,8 +4,7 @@ import CustomInput from '../CustomInput/CustomInput';
 
 const tips = [5, 10, 15, 25, 50];
 
-
-function TipSelect(props) {
+function TipSelect({onChangeState}) {
     return(
         <div>
             <p className={style.header}>Select Tip %</p>
@@ -13,16 +12,15 @@ function TipSelect(props) {
                 {tips.map((tip,i) => {
                     return(
                         <Tip 
-                        onTipChange={props.onTipChange} 
+                        onChangeState={onChangeState} 
                         key={i} 
                         amount={tip}
                         />
                     )
                 })}
-                <CustomInput />
+                <CustomInput onChangeState={onChangeState}/>
             </div>
-        </div>
-        
+        </div>      
     );
 }
 

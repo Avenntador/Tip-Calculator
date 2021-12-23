@@ -18,8 +18,10 @@
     padding: .6rem 1.7rem;
     color: #00474B;
     appearance: none;
+    font-family: var(--font-primary);
 }
 
-.billInput.billInput:focus {
+.billInput:focus {
+    outline: none;
     border: 2px solid #26C2AE;
 }

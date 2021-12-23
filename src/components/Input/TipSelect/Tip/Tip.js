@@ -1,20 +1,10 @@
 import style from './Tip.module.css'
 import React from 'react'
 
-function Tip(props) {
-
-    const refTip = React.createRef();
-    function getTip(e) {
-         props.onTipChange(parseInt(refTip.current.textContent));
-    }
-
+function Tip({amount, onChangeState}) {
     return(
-        <div 
-            ref={refTip} 
-            onClick={getTip} 
-            className={style.tipItem}
-        >
-                {props.amount}%
+        <div onClick={(e) => {onChangeState('Tip', parseInt(e.target.textContent))}} className={style.tipItem}>
+            {amount}%
         </div>
     );
 }
