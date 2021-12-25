@@ -13,7 +13,7 @@
     background-color: #0D686D;;
     color: #00474B;
     border-radius: .5rem;
-
+    cursor: pointer;
     font-size: 2rem;
     font-weight: 700;
 }

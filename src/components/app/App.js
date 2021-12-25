@@ -7,40 +7,50 @@ import { useState } from 'react'
 
 function App() {
 
-    const [bill, setBill] = useState(0);
-    const [peopleNum, setPeopleNum] = useState(0);
-    const [tip, setTip] = useState(0);
-   
+    const [billInput, setBillInput] = useState('');
+    const [peopleNumInput, setPeopleNumInput] = useState('');
+    const [tipVal, setTipVal] = useState('');
+    const [customTip, setCustomTip] = useState('');
+    const [active, setActive] = useState(-1);
+
+
     let tipPerPerson = 0
     let totalBillPerPerson = 0;
-
-    if (peopleNum && tip) {
-        tipPerPerson = (bill * (tip / 100)) / peopleNum;
-        totalBillPerPerson = (bill / peopleNum) + tipPerPerson;
-    }
+    let tip;
     
+    customTip ? tip = customTip : tip = tipVal;
+
+    if (peopleNumInput && tip) {
+        tipPerPerson = (billInput * (tip / 100)) / peopleNumInput;
+        totalBillPerPerson = (billInput / peopleNumInput) + tipPerPerson;
+    }
+
+
     function onChangeState(action, value = '') {
         switch(action) {
             case 'Bill': 
-                setBill(value);
+                setBillInput(value);
                 break;
             
             case 'People': 
-                setPeopleNum(value);
+                setPeopleNumInput(value);
                 break;
             
             case 'Tip': 
-                setTip(value);
+                setTipVal(value);
+                setCustomTip('');
                 break;
             
             case 'Custom': 
-                setTip(value);
+                setCustomTip(value);
+                setTipVal('');
                 break;
             
             case 'Reset': 
-                setBill(0);
-                setTip(0);
-                setPeopleNum(0);
+                setBillInput('');
+                setPeopleNumInput('');
+                setTipVal('');
+                setCustomTip('');
                 break;
         }
     }
@@ -49,11 +59,19 @@ function App() {
         <>
             <img className={style.logo} src={logo} alt="App Logo" />
             <div className={style.container}>
-                <Input onChangeState={onChangeState}/>
+                <Input 
+                    onChangeState={onChangeState}
+                    billInput={billInput}
+                    peopleNumInput={peopleNumInput}
+                    customTip={customTip}
+                    active={active}
+                    setActive={setActive}
+                />
                 <Output 
                     tipPerPerson={tipPerPerson}
                     totalBillPerPerson={totalBillPerPerson}
                     onChangeState={onChangeState}
+                    setActive={setActive}
                 />
             </div>
         </>

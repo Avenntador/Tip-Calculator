@@ -21,7 +21,17 @@
     font-family: var(--font-primary);
 }
 
-.peopleInput:focus {
+.inputContainer {
+    position: relative;
+}
+ 
+.inputIcon {
+    position: absolute;
+    left: 1.7rem;
+    top: 1.5rem
+}
+
+.peopleInput:focus, .peopleInput:hover {
     outline: none;
     border: 2px solid #26C2AE;
 }
@@ -35,4 +45,9 @@
 
 .hide {
     display: none;
+}
+
+.errorBorder {
+    outline: none !important;
+    border: 2px solid #E17457 !important;
 }
