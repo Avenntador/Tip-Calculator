@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![]((https://user-images.githubusercontent.com/29005134/151507727-37e0cbd8-acf2-48bf-b0ac-7922e7e4df24.jpg)
+![](https://user-images.githubusercontent.com/29005134/151507727-37e0cbd8-acf2-48bf-b0ac-7922e7e4df24.jpg)
 
 ## My process
 
